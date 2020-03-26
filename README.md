@@ -46,7 +46,7 @@ All results are stored inside the container for the life of that `mkit` run, and
 ## Quick Start
 
 1. Clone this repository to your Linux/OSX/WSL2 system.
-2. See the next section for building the image manually, if desired.
+2. See the [section](https://github.com/darkbitio/mkit#building-the-docker-image-manually) on building the image manually, if desired.
 3. Ensure you have the permissions to `get/list/describe` your cluster via the native APIs and you have `cluster-admin` or the `view` `ClusterRole` bound to your current account.
 4. Run the tool for your use case:
     1. AKS:
@@ -152,4 +152,4 @@ MKIT Running - browse to http://localhost:8000
 
 1. Fork the desired profile repository
 2. Modify the release tag and release URL to point to your new repository/release
-3. Follow the steps in the previous section to build a custom container using your new profile
+3. Follow the steps in the previous [section](https://github.com/darkbitio/mkit#building-the-docker-image-manually) to build a custom container using your new profile
