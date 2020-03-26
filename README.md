@@ -57,7 +57,7 @@ All results are stored inside the container for the life of that `mkit` run, and
     1. GKE: 
         * Run `gcloud auth application-default login`
         * `make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cluster-name`
-    1. K8s:
+    1. K8s (Any Kubernetes Cluster):
         * Ensure the current context is set in your `KUBECONFIG` (`~/.kube/config`) file
         * Run `kubectl get nodes` to confirm access and the proper cluster is being targeted.
         * `make run-k8s`
