@@ -65,6 +65,48 @@ All results are stored inside the container for the life of that `mkit` run, and
 
 Note: the `K8s` profile checks are automatically run by the `AKS`, `EKS`, and `GKE` invocations.  You would only need to run the `K8s` checks separately if you don't have access to or want to review the cluster and node configurations.
 
+## Example run against an AKS cluster
+
+```console
+$ export AZURE_CLIENT_ID="<client id>"
+$ export AZURE_TENANT_ID="<tenant id>"
+$ export AZURE_CLIENT_SECRET="<client secret>"
+$ export AZURE_SUBSCRIPTION_ID="<subscription id>"
+
+$ make run-aks resourcegroup=myResourceGroup clustername=aks1
+Running in darkbitio/mkit:latest: /home/node/audit/aks.sh
+Generating results...[2020-03-26T22:33:45+00:00] WARN: Overwriting resource azurerm_resource. To reference a specific version of azurerm_resource use the resource() method
+[2020-03-26T22:33:45+00:00] WARN: Overwriting resource azurerm_aks_cluster. To reference a specific version of azurerm_aks_cluster use the resource() method
+done.
+Merged "aks1" as current context in /home/node/.kube/config
+Generating results...done.
+
+Visit http://localhost:8000 to view the results
+yarn run v1.22.0
+$ node app.js
+
+
+MKIT Running - browse to http://localhost:8000
+
+```
+
+## Example run against an EKS cluster
+
+```console
+$ make run-eks awsregion=us-east-1 clustername=eks1
+Generating results...done.
+Added new context arn:aws:eks:us-east-1:1234567890:cluster/eks1 to /home/node/.kube/config
+Generating results...done.
+
+Visit http://localhost:8000 to view the results
+yarn run v1.22.0
+$ node app.js
+
+
+MKIT Running - browse to http://localhost:8000
+
+```
+
 ## Example run against a GKE cluster
 
 ```console
@@ -73,6 +115,22 @@ Running in darkbitio/mkit:latest: /home/node/audit/gke.sh
 Generating results...done.
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for my-gke-cluster.
+Generating results...done.
+
+Visit http://localhost:8000 to view the results
+yarn run v1.22.0
+$ node app.js
+
+
+MKIT Running - browse to http://localhost:8000
+
+```
+
+## Example run against a Docker-for-Mac local cluster
+
+```console
+$ make run-k8s
+Running in darkbitio/mkit:latest: /home/node/audit/k8s.sh
 Generating results...done.
 
 Visit http://localhost:8000 to view the results
