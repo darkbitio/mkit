@@ -31,6 +31,12 @@ You can run the in-cluster Kubernetes checks by themselves.  See the steps for t
 * [https://github.com/darkbitio/inspec-profile-gke](https://github.com/darkbitio/inspec-profile-gke)
 * [https://github.com/darkbitio/inspec-profile-k8s](https://github.com/darkbitio/inspec-profile-k8s)
 
+## What does the results viewer look like?
+
+<p align="center">
+  <img src="./images/results1.png">
+</p>
+
 ## Quick Start
 
 1. Clone this repository to your Linux/OSX/WSL2 system.
