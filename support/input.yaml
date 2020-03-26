@@ -1,0 +1,9 @@
+known_registry_list:
+- /^asia.gcr.io\/gke-release-staging\/.*/
+- /^gcr.io\/projectcalico-org\/.*/
+- /^gcr.io\/stackdriver-agents\/.*/
+- /^gke.gcr.io\/.*/
+- /^k8s.gcr.io\/.*/
+- /^deis\/hcp-tunnel-front:.*/
+- /^mcr.microsoft.com\/.*/
+- /^602401143452\.dkr\.ecr\..*\.amazonaws.com\/.*/
