@@ -31,6 +31,12 @@ You can run the in-cluster Kubernetes checks by themselves.  See the steps for t
 * [https://github.com/darkbitio/inspec-profile-gke](https://github.com/darkbitio/inspec-profile-gke)
 * [https://github.com/darkbitio/inspec-profile-k8s](https://github.com/darkbitio/inspec-profile-k8s)
 
+## What is happening?
+
+When running `make` with various parameters, the `mkit` tool is leveraging your cloud credentials to query the provider's APIs for the specific cluster and validating its configuration.  It then connects to the cluster directly via the Kubernetes API server to validate several configuration items inside the cluster.  Finally, it combines those results into a format viewable by the `mkit-ui` launched inside the `mkit` container listening on `localhost:8000` for viewing.
+
+All results are stored inside the container for the life of that `mkit` run, and they are not uploaded or shared in any way.
+
 ## What does the results viewer look like?
 
 <p align="center">
@@ -41,19 +47,23 @@ You can run the in-cluster Kubernetes checks by themselves.  See the steps for t
 
 1. Clone this repository to your Linux/OSX/WSL2 system.
 2. See the next section for building the image manually, if desired.
-3. Run the tool for your use case:
+3. Ensure you have the permissions to `get/list/describe` your cluster via the native APIs and you have `cluster-admin` or the `view` `ClusterRole` bound to your current account.
+4. Run the tool for your use case:
     1. AKS:
         * Export your Azure credentials as local environment variables (`AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_CLIENT_SECRET`, `AZURE_SUBSCRIPTION_ID`)
         * `make run-aks resourcegroup=myResourceGroup clustername=my-aks-cluster-name`
     1. EKS:
         * `make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name`
-    1. GKE:
+    1. GKE: 
+        * Run `gcloud auth application-default login`
         * `make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cluster-name`
     1. K8s:
         * Ensure the current context is set in your `KUBECONFIG` (`~/.kube/config`) file
         * Run `kubectl get nodes` to confirm access and the proper cluster is being targeted.
         * `make run-k8s`
-4. Visit [localhost:8000](http://localhost:8000) to view the results of the scan.
+5. Visit [localhost:8000](http://localhost:8000) to view the results of the scan.
+
+Note: the `K8s` profile checks are automatically run by the `AKS`, `EKS`, and `GKE` invocations.  You would only need to run the `K8s` checks separately if you don't have access to or want to review the cluster and node configurations.
 
 ## Building the Docker image manually
 
