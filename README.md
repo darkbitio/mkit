@@ -40,7 +40,7 @@ All results are stored inside the container for the life of that `mkit` run, and
 ## What does the results viewer look like?
 
 <p align="center">
-  <img src="./images/results1.png">
+  <img width="759" src="./images/results1.png">
 </p>
 
 ## Quick Start
