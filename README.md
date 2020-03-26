@@ -65,6 +65,25 @@ All results are stored inside the container for the life of that `mkit` run, and
 
 Note: the `K8s` profile checks are automatically run by the `AKS`, `EKS`, and `GKE` invocations.  You would only need to run the `K8s` checks separately if you don't have access to or want to review the cluster and node configurations.
 
+## Example run against a GKE cluster
+
+```console
+$ make run-gke project_id=my-gke-project location=us-central1 clustername=my-gke-cluster
+Running in darkbitio/mkit:latest: /home/node/audit/gke.sh
+Generating results...done.
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for my-gke-cluster.
+Generating results...done.
+
+Visit http://localhost:8000 to view the results
+yarn run v1.22.0
+$ node app.js
+
+
+MKIT Running - browse to http://localhost:8000
+
+```
+
 ## Building the Docker image manually
 
 1. Clone this repo
