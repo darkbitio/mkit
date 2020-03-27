@@ -43,6 +43,10 @@ All results are stored inside the container for the life of that `mkit` run, and
   <img width="759" src="./images/results1.png">
 </p>
 
+<p align="center">
+  <img width="759" src="./images/results2.png">
+</p>
+
 ## Quick Start
 
 1. Clone this repository to your Linux/OSX/WSL2 system.
