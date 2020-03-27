@@ -23,11 +23,11 @@ touch "${OUTPUT_PATH}"
 
 # Run the GCP/GKE profile for cloud resources
 echo -n "Generating results..."
-cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-eks" -t aws:// --input awsregion="${awsregion}" clustername="${clustername}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}"
+cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-eks" -t aws:// --input awsregion="${awsregion}" clustername="${clustername}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
 echo "done."
 
 # Get a valid kubeconfig inside the container
-aws eks --region "${awsregion}" update-kubeconfig --name "${clustername}"
+aws eks --region "${awsregion}" update-kubeconfig --name "${clustername}" || exit 1
 
 # Run the K8s profile for workloads
 ./k8s.sh

@@ -21,15 +21,15 @@ PROFILE_BASE_PATH="../profiles"
 OUTPUT_PATH="${HOME}/raw-results.json"
 touch "${OUTPUT_PATH}"
 
-az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID > /dev/null
+az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID > /dev/null || exit 1
 
 # Run the Azure/AKS profile for cloud resources
 echo -n "Generating results..."
-cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-aks" -t azure:// --input resourcegroup="${resourcegroup}" clustername="${clustername}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}"
+cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-aks" -t azure:// --input resourcegroup="${resourcegroup}" clustername="${clustername}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
 echo "done."
 
 # Get a valid kubeconfig inside the container
-az aks get-credentials --resource-group "${resourcegroup}" --name "${clustername}"
+az aks get-credentials --resource-group "${resourcegroup}" --name "${clustername}" || exit 1
 
 # Run the K8s profile for workloads
 ./k8s.sh

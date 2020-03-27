@@ -25,15 +25,15 @@ touch "${OUTPUT_PATH}"
 
 # Run the GCP/GKE profile for cloud resources
 echo -n "Generating results..."
-cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-gke" -t gcp:// --input project_id="${project_id}" location="${location}" clustername="${clustername}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}"
+cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-gke" -t gcp:// --input project_id="${project_id}" location="${location}" clustername="${clustername}" --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
 echo "done."
 
 # Get a valid kubeconfig inside the container
 # two dashes means a zone, else region
 if [[ "${location}" =~ ^.+\-.+\-.+$ ]]; then
-  gcloud container clusters get-credentials --project "${project_id}" --zone "${location}" "${clustername}"
+  gcloud container clusters get-credentials --project "${project_id}" --zone "${location}" "${clustername}" || exit 1
 else
-  gcloud container clusters get-credentials --project "${project_id}" --region "${location}" "${clustername}"
+  gcloud container clusters get-credentials --project "${project_id}" --region "${location}" "${clustername}" || exit 1
 fi
 
 # Run the K8s profile for workloads
