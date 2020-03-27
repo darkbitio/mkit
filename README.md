@@ -6,11 +6,11 @@
 
 ## Evaluate key security risks of your managed Kubernetes clusters and resources
 
-`mkit` is a "Managed [Kubernetes](https://kubernetes.io) Inspection Tool" that leverages FOSS tools to query and validate several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster.  It runs entirely from a local docker container and queries your cloud provider's APIs and the Kubernetes API to determine if certain misconfigurations are found.  The same docker container then launches a web UI to view and navigate the results on [localhost:8000](http://localhost:8000).
+`MKIT` is a "Managed [Kubernetes](https://kubernetes.io) Inspection Tool" that leverages FOSS tools to query and validate several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster.  It runs entirely from a local docker container and queries your cloud provider's APIs and the Kubernetes API to determine if certain misconfigurations are found.  The same docker container then launches a web UI to view and navigate the results on [localhost:8000](http://localhost:8000).
 
 ## Who is this for?
 
-`mkit` provides security-minded Kubernetes cluster administrators with a quick way to assess several common misconfigurations in their Kubernetes environment.
+`MKIT` provides security-minded Kubernetes cluster administrators with a quick way to assess several common misconfigurations in their Kubernetes environment.
 
 ## Which Managed Kubernetes providers are supported?
 
@@ -22,9 +22,9 @@
 
 You can run the in-cluster Kubernetes checks by themselves.  See the steps for targeting `k8s` instead of `aks`, `eks`, or `gke`.
 
-## What does mkit check for?
+## What does MKIT check for?
 
-`mkit` makes use of [Chef Inspec](https://inspec.io)-formatted profiles, and they are located at the locations below:
+`MKIT` makes use of [Chef Inspec](https://inspec.io)-formatted profiles, and they are located at the locations below:
 
 * [https://github.com/darkbitio/inspec-profile-aks](https://github.com/darkbitio/inspec-profile-aks)
 * [https://github.com/darkbitio/inspec-profile-eks](https://github.com/darkbitio/inspec-profile-eks)
@@ -33,9 +33,9 @@ You can run the in-cluster Kubernetes checks by themselves.  See the steps for t
 
 ## What is happening?
 
-When running `make` with various parameters, the `mkit` tool is leveraging your cloud credentials to query the provider's APIs for the specific cluster and validating its configuration.  It then connects to the cluster directly via the Kubernetes API server to validate several configuration items inside the cluster.  Finally, it combines those results into a format viewable by the `mkit-ui` launched inside the `mkit` container listening on `localhost:8000` for viewing.
+When running `make` with various parameters, the `MKIT` tool is leveraging your cloud credentials to query the provider's APIs for the specific cluster and validating its configuration.  It then connects to the cluster directly via the Kubernetes API server to validate several configuration items inside the cluster.  Finally, it combines those results into a format viewable by the `mkit-ui` launched inside the `mkit` container listening on `localhost:8000` for viewing.
 
-All results are stored inside the container for the life of that `mkit` run, and they are not uploaded or shared in any way.
+All results are stored inside the container for the life of that `MKIT` run, and they are not uploaded or shared in any way.
 
 ## What does the results viewer look like?
 
