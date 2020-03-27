@@ -44,7 +44,7 @@ All results are stored inside the container for the life of that `mkit` run, and
 </p>
 
 <p align="center">
-  <img width="759" src="./images/results2.png">
+  <img width="584" src="./images/results2.png">
 </p>
 
 ## Quick Start
