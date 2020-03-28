@@ -137,7 +137,7 @@ make run-k8s
 
 Visit [http://localhost:8000](http://localhost:8000) to view the results of the scan.
 
-Note: the `k8s` profile checks are automatically run by the `AKS`, `EKS`, and `GKE` invocations. You would only need to run the `K8s` checks separately if you don't have access to or want to review the cluster and node configurations.
+Note: the `k8s` profile checks are automatically run by the `aks`, `eks`, and `gke` invocations. You would only need to run the `k8s` checks separately if you don't have access to or want to review the cluster and node configurations.
 
 ### Example run against an AKS cluster
 
