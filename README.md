@@ -18,6 +18,8 @@
 - [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) - "EKS"
 - [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) - "GKE"
 
+Note: Authenticating to AKS-Engine clusters using Azure for AD is not yet supported.  For now, ensure your kubeconfig entry is generated using `az aks get-credentials`.
+
 ## What if I'm running Kubernetes not on AKS, EKS, or GKE?
 
 You can run the in-cluster Kubernetes checks by themselves. See the steps for targeting `k8s` instead of `aks`, `eks`, or `gke`.
