@@ -82,10 +82,10 @@ The **MKIT** web UI shows all of the results on a single page. Failed checks app
 
 Export your Azure credentials as local environment variables. The following are required:
 
-1. `AZURE_CLIENT_ID`
-1. `AZURE_TENANT_ID`
-1. `AZURE_CLIENT_SECRET`
-1. `AZURE_SUBSCRIPTION_ID`
+- `AZURE_CLIENT_ID`
+- `AZURE_TENANT_ID`
+- `AZURE_CLIENT_SECRET`
+- `AZURE_SUBSCRIPTION_ID`
 
 Run with the **AKS** option:
 
@@ -97,9 +97,9 @@ make run-aks resourcegroup=myResourceGroup clustername=my-aks-cluster-name
 
 Export your AWS credentials as local environment variables. The following are required:
 
-1. `AWS_PROFILE`
-1. `AWS_ACCESS_KEY_ID`
-1. `AWS_SECRET_ACCESS_KEY`
+- `AWS_PROFILE`
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
 
 Run with the **EKS** option:
 
