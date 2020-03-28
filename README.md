@@ -8,7 +8,7 @@
 
 ## Quickly discover key security risks of your managed Kubernetes clusters and resources
 
-**MKIT** is a Managed [Kubernetes](https://kubernetes.io) Inspection Tool that leverages FOSS tools to query and validate several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster. It runs entirely from a local docker container and queries your cloud provider's APIs and the Kubernetes API to determine if certain misconfigurations are found. The same docker container then launches a web UI to view and navigate the results on [localhost:8000](http://localhost:8000).
+**MKIT** is a Managed [Kubernetes](https://kubernetes.io) Inspection Tool that leverages FOSS tools to query and validate several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster. It runs entirely from a local Docker container and queries your cloud provider's APIs and the Kubernetes API to determine if certain misconfigurations are found. The same Docker container then launches a web UI to view and navigate the results on [localhost:8000](http://localhost:8000).
 
 ---
 
@@ -75,7 +75,7 @@ The **MKIT** web UI shows all of the results on a single page. Failed checks app
 
 1. Clone this repository to your Linux / macOS / WSL2 system.
 2. See the [section](#building-the-docker-image-manually) on building the image manually, if desired.
-3. Ensure you have the permissions to `get/list/describe` your cluster via the native APIs and you have `cluster-admin` or the `view` `ClusterRole` bound to your current account.
+3. Ensure you have the permissions to `get/list/describe` your cluster via the native APIs and you have Kubernetes `cluster-admin` or the `view` `ClusterRole` bound to your current account.
 4. Run the tool for your use case:
 
 **AKS**
@@ -137,7 +137,7 @@ make run-k8s
 
 Visit [http://localhost:8000](http://localhost:8000) to view the results of the scan.
 
-Note: the `K8s` profile checks are automatically run by the `AKS`, `EKS`, and `GKE` invocations. You would only need to run the `K8s` checks separately if you don't have access to or want to review the cluster and node configurations.
+Note: the `k8s` profile checks are automatically run by the `AKS`, `EKS`, and `GKE` invocations. You would only need to run the `K8s` checks separately if you don't have access to or want to review the cluster and node configurations.
 
 ### Example run against an AKS cluster
 
