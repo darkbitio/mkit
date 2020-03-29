@@ -61,15 +61,15 @@ The **MKIT** web UI shows all of the results on a single page. Failed checks app
 
 ### Results Overview
 
-[![Results Overview](images/overview-preview.png)](overview-6e9655b88b6f415939f518ea85e47fb0.png)
+[![Results Overview](images/overview-preview.png)](images/overview-6e9655b88b6f415939f518ea85e47fb0.png)
 
 ### Result Details
 
-[![Result Details](images/details-preview.png)](details-0d5bd6d475506c9935a88afaed110357.png)
+[![Result Details](images/details-preview.png)](images/details-0d5bd6d475506c9935a88afaed110357.png)
 
 ### Affected Resources
 
-[![Affeced Resources](images/resources-preview.png)](resources-0f2f1ec9b5cb081cd3264dd1b35e843e.png)
+[![Affeced Resources](images/resources-preview.png)](images/resources-0f2f1ec9b5cb081cd3264dd1b35e843e.png)
 
 ## Quick Start
 
