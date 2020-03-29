@@ -2,3 +2,4 @@
 *.swp
 .env
 *.json
+.DS_Store
