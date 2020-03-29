@@ -61,15 +61,15 @@ The **MKIT** web UI shows all of the results on a single page. Failed checks app
 
 ### Results Overview
 
-<p align="center">
-  <img width="759" src="./images/results1.png">
-</p>
+[![Results Overview](images/overview-preview.png)](overview-6e9655b88b6f415939f518ea85e47fb0.png)
 
 ### Result Details
 
-<p align="center">
-  <img width="584" src="./images/results2.png">
-</p>
+[![Result Details](images/details-preview.png)](details-0d5bd6d475506c9935a88afaed110357.png)
+
+### Affected Resources
+
+[![Affeced Resources](images/resources-preview.png)](resources-0f2f1ec9b5cb081cd3264dd1b35e843e.png)
 
 ## Quick Start
 
@@ -104,7 +104,7 @@ Export your AWS credentials as local environment variables. The following are re
 Run with the **EKS** option:
 
 ```console
-make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name
+$ make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name
 ```
 
 **GKE**
@@ -112,13 +112,13 @@ make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name
 Authenticate with your Google Cloud credentials
 
 ```console
-gcloud auth application-default login
+$ gcloud auth application-default login
 ```
 
-Run with the **GKE** option:
+Run with the **GKE** option (be sure to specify project-id and not project-name):
 
 ```console
-make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cluster-name
+$ make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cluster-name
 ```
 
 **Standalone Kubernetes**
@@ -126,13 +126,13 @@ make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cl
 Ensure the current context is set in your `KUBECONFIG` (`~/.kube/config`) file. Confirm access and that the proper cluster is being targeted.
 
 ```console
-kubectl get nodes
+$ kubectl get nodes
 ```
 
 Run with the standalone Kubernetes option.
 
 ```console
-make run-k8s
+$ make run-k8s
 ```
 
 Visit [http://localhost:8000](http://localhost:8000) to view the results of the scan.
@@ -155,7 +155,7 @@ Generating results...done.
 
 Visit http://localhost:8000 to view the results
 yarn run v1.22.0
-$ node app.js
+node app.js
 
 
 MKIT Running - browse to http://localhost:8000
@@ -175,7 +175,7 @@ Generating results...done.
 
 Visit http://localhost:8000 to view the results
 yarn run v1.22.0
-$ node app.js
+node app.js
 
 
 MKIT Running - browse to http://localhost:8000
@@ -197,7 +197,7 @@ Generating results...done.
 
 Visit http://localhost:8000 to view the results
 yarn run v1.22.0
-$ node app.js
+node app.js
 
 
 MKIT Running - browse to http://localhost:8000
@@ -218,7 +218,7 @@ Generating results...done.
 
 Visit http://localhost:8000 to view the results
 yarn run v1.22.0
-$ node app.js
+node app.js
 
 
 MKIT Running - browse to http://localhost:8000
