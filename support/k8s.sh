@@ -19,7 +19,7 @@ OUTPUT_PATH="${HOME}/raw-results.json"
 touch "${OUTPUT_PATH}"
 
 echo -n "Generating results..."
-cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-k8s" -t k8s:// --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
+cinc-auditor exec "${PROFILE_BASE_PATH}/inspec-profile-k8s" -t k8s:// --input-file=input.yaml --reporter=json:- | ./inspec-results-parser.rb >> "${OUTPUT_PATH}" || exit 1
 echo "done."
 
 ./results.sh

@@ -29,7 +29,7 @@ NDEF = $(if $(value $(1)),,$(error $(1) not set))
 
 DOCKERBUILD=docker build -t $(IMAGEREPO):latest .
 
-COMMAND=docker run --rm -it -p8000:8000 -v `pwd`/support/input.yaml:$(WORKDIR)/input.yaml
+COMMAND=docker run --rm -it -p8000:8000 -v $(PWD)/support/input.yaml:$(WORKDIR)/input.yaml
 
 GKEDEVMOUNT=-v $(LOCALDIR)/inspec-profile-gke:$(HOMEDIR)/profiles/inspec-profile-gke \
   -v $(LOCALDIR)/inspec-profile-k8s:$(HOMEDIR)/profiles/inspec-profile-k8s
