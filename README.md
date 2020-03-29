@@ -104,7 +104,7 @@ Export your AWS credentials as local environment variables. The following are re
 Run with the **EKS** option:
 
 ```console
-$ make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name
+make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name
 ```
 
 **GKE**
@@ -112,13 +112,13 @@ $ make run-eks awsregion=us-east-1 clustername=my-eks-cluster-name
 Authenticate with your Google Cloud credentials
 
 ```console
-$ gcloud auth application-default login
+gcloud auth application-default login
 ```
 
 Run with the **GKE** option (be sure to specify project-id and not project-name):
 
 ```console
-$ make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cluster-name
+make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-cluster-name
 ```
 
 **Standalone Kubernetes**
@@ -126,13 +126,13 @@ $ make run-gke project_id=my-project-id location=us-central1 clustername=my-gke-
 Ensure the current context is set in your `KUBECONFIG` (`~/.kube/config`) file. Confirm access and that the proper cluster is being targeted.
 
 ```console
-$ kubectl get nodes
+kubectl get nodes
 ```
 
 Run with the standalone Kubernetes option.
 
 ```console
-$ make run-k8s
+make run-k8s
 ```
 
 Visit [http://localhost:8000](http://localhost:8000) to view the results of the scan.
