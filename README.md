@@ -4,7 +4,7 @@
 
 # MKIT - Managed Kubernetes Inspection Tool
 
-![MKIT](https://img.shields.io/badge/mkit-v1.0.0-blueviolet) ![GitHub stars](https://img.shields.io/github/stars/darkbitio/mkit)
+![MKIT](https://img.shields.io/badge/mkit-v1.0.0-blueviolet)
 
 ### Quickly discover key security risks of your managed Kubernetes clusters and resources
 
@@ -13,6 +13,8 @@
 ## Demo
 
 View a live demo of the [web UI here](https://mkit.darkbit.io/).
+
+[![web UI demo](images/demo-screen.png)](https://mkit.darkbit.io)
 
 ---
 
@@ -65,15 +67,15 @@ The **MKIT** web UI shows all of the results on a single page. Failed checks app
 
 ### Results Overview
 
-[![Results Overview](images/overview-preview.png)](images/overview-6e9655b88b6f415939f518ea85e47fb0.png)
+![Results Overview](images/overview-screen.png)
 
 ### Result Details
 
-[![Result Details](images/details-preview.png)](images/details-0d5bd6d475506c9935a88afaed110357.png)
+![Result Details](images/details-screen.png)
 
 ### Affected Resources
 
-[![Affeced Resources](images/resources-preview.png)](images/resources-0f2f1ec9b5cb081cd3264dd1b35e843e.png)
+![Affeced Resources](images/resources-screen.png)
 
 ## Quick Start
 
