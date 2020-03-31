@@ -63,19 +63,31 @@ All results are stored inside the container for the life of that **MKIT** run, a
 
 ## Viewing Results
 
-The **MKIT** web UI shows all of the results on a single page. Failed checks appear first, followed but passed checks. Clicking **view all** will show all of the underlying resources impacted by the checks and whether they **passed** or **failed**.
+The **MKIT** web UI shows all of the results on a single page. Failed checks appear first, followed by passed checks. Clicking **view all** will show all of the underlying resources impacted by the checks and whether they **passed** or **failed**.
+
+<div style="display: flex;">
+  <div style="width: 33%; padding: 5px;">
 
 ### Results Overview
 
 ![Results Overview](images/overview-screen.png)
 
+  </div>
+  <div style="width: 33%; padding: 5px;">
+
 ### Result Details
 
 ![Result Details](images/details-screen.png)
 
+  </div>
+  <div style="width: 33%; padding: 5px;">
+
 ### Affected Resources
 
 ![Affeced Resources](images/resources-screen.png)
+
+  </div>
+</div>
 
 ## Quick Start
 
