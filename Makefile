@@ -59,8 +59,9 @@ EKSCOMMAND=$(COMMAND) \
 EKSINSPECRUN=$(EKSCOMMAND) --entrypoint $(WORKDIR)/$(CHECKEKS) $(IMAGEPATH) "$(awsregion)" "$(clustername)"
 
 K8SDEVMOUNT=-v $(LOCALDIR)/inspec-profile-k8s:$(HOMEDIR)/profiles/inspec-profile-k8s
+K8SKUBECONFIG=$(or ${KUBECONFIG},${KUBECONFIG},$(HOME)/.kube/config)
 K8SCOMMAND=$(COMMAND) \
-  -v $(HOME)/.kube/config:/${HOMEDIR}/.kube/config:ro
+  -v $(K8SKUBECONFIG):/${HOMEDIR}/.kube/config:ro
 K8SINSPECRUN=$(K8SCOMMAND) --entrypoint $(WORKDIR)/$(CHECKK8S) $(IMAGEPATH)
 
 
