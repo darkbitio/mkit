@@ -6,9 +6,13 @@
 
 ![MKIT](https://img.shields.io/badge/mkit-v1.0.0-blueviolet) ![GitHub stars](https://img.shields.io/github/stars/darkbitio/mkit)
 
-## Quickly discover key security risks of your managed Kubernetes clusters and resources
+### Quickly discover key security risks of your managed Kubernetes clusters and resources
 
 **MKIT** is a Managed [Kubernetes](https://kubernetes.io) Inspection Tool that leverages FOSS tools to query and validate several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster. It runs entirely from a local Docker container and queries your cloud provider's APIs and the Kubernetes API to determine if certain misconfigurations are found. The same Docker container then launches a web UI to view and navigate the results on [localhost:8000](http://localhost:8000).
+
+## Demo
+
+View a live demo of the [web UI here](https://mkit.darkbit.io/).
 
 ---
 
