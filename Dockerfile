@@ -110,7 +110,7 @@ RUN git clone https://github.com/darkbitio/mkit-ui.git && \
 ARG K8SPROFILE=0.1.2
 ARG GKEPROFILE=0.1.2
 ARG AKSPROFILE=0.1.3
-ARG EKSPROFILE=0.1.2
+ARG EKSPROFILE=0.1.3
 
 # Profiles
 RUN wget -O inspec-profile-k8s.zip https://github.com/darkbitio/inspec-profile-k8s/archive/${K8SPROFILE}.zip && \
