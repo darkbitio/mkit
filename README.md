@@ -4,7 +4,7 @@
 
 # MKIT - Managed Kubernetes Inspection Tool
 
-![MKIT](https://img.shields.io/badge/mkit-v1.0.0-blueviolet)
+![MKIT](images/badge-v1.0.0.svg)
 
 ### Quickly discover key security risks of your managed Kubernetes clusters and resources
 
