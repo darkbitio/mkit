@@ -14,8 +14,9 @@
 
 FROM ruby:2.6.5-alpine3.11
 
-ARG VERSION=4.18.51
+ARG INSPEC_VERSION=4.18.51
 ARG GEM_SOURCE=https://rubygems.org
+ARG CINC_GEM_SOURCE=https://packagecloud.io/cinc-project/stable
 ARG RUNUSER=node
 ARG UIDIR="ui"
 ARG AUDITDIR="audit"
@@ -48,7 +49,9 @@ RUN curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/rele
 
 # Yarn
 RUN apk add --no-cache --virtual .build-deps-yarn && \
-    gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "${YARN_GPG_KEY}" && \
+    gpg --batch --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "${YARN_GPG_KEY}" || \
+    gpg --batch --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "${YARN_GPG_KEY}" || \
+    gpg --batch --keyserver hkp://pgp.mit.edu:80 --recv-keys "${YARN_GPG_KEY}" ; \
     curl -fsSLO --compressed "https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-v${YARN_VERSION}.tar.gz" && \
     curl -fsSLO --compressed "https://yarnpkg.com/downloads/${YARN_VERSION}/yarn-v${YARN_VERSION}.tar.gz.asc" && \
     gpg --batch --verify yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz && \
@@ -69,8 +72,8 @@ RUN mkdir -p /home/${RUNUSER}/${UIDIR} /home/${RUNUSER}/${AUDITDIR} /home/${RUNU
 
 # Inspec/Cinc
 ENV PATH="/home/${RUNUSER}/.gem/ruby/2.6.0/bin:${PATH}"
-RUN gem install --user-install --no-document --source ${GEM_SOURCE} --version ${VERSION} inspec && \
-    gem install --user-install --no-document --source ${GEM_SOURCE} --version ${VERSION} cinc-auditor-bin && \
+RUN gem install --user-install --no-document --source ${GEM_SOURCE} --version ${INSPEC_VERSION} inspec && \
+    gem install --user-install --no-document --source ${CINC_GEM_SOURCE} --version ${INSPEC_VERSION} cinc-auditor-bin && \
     gem install --user-install --no-document jsonl train-kubernetes && \
     cinc-auditor plugin install train-kubernetes && \
     sed -ie 's#"= 0#"0#g' /home/${RUNUSER}/.inspec/plugins.json
