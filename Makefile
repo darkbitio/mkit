@@ -50,7 +50,7 @@ AKSINSPECRUN=$(AKSCOMMAND) --entrypoint $(WORKDIR)/$(CHECKAKS) $(IMAGEPATH) "$(r
 EKSDEVMOUNT=-v $(LOCALDIR)/inspec-profile-eks:$(HOMEDIR)/profiles/inspec-profile-eks \
   -v $(LOCALDIR)/inspec-profile-k8s:$(HOMEDIR)/profiles/inspec-profile-k8s
 EKSCOMMAND=$(COMMAND) \
-  -v $(HOME)/.aws:/root/.aws:ro \
+  -v $(HOME)/.aws:${HOMEDIR}/.aws:ro \
   -e AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY \
   -e AWS_SESSION_TOKEN \
