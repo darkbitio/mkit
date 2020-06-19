@@ -111,7 +111,7 @@ RUN git clone https://github.com/darkbitio/mkit-ui.git && \
 
 # Profile versions
 ARG K8SPROFILE=0.1.2
-ARG GKEPROFILE=0.1.2
+ARG GKEPROFILE=0.1.5
 ARG AKSPROFILE=0.1.3
 ARG EKSPROFILE=0.1.4
 
