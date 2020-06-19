@@ -98,7 +98,7 @@ RUN pip3 install --user awscli
 RUN pip3 install --user azure-cli
 
 # UI
-ARG UIVERSION="v1.0.0"
+ARG UIVERSION="v1.1.0"
 RUN git clone https://github.com/darkbitio/mkit-ui.git && \
     cd mkit-ui/docker && \
     git checkout tags/${UIVERSION} && \
