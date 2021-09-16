@@ -69,10 +69,12 @@ The **MKIT** web UI ([http://localhost:8000](http://localhost:8000)) shows all o
 
 ## Quick Start
 
-1. Clone this repository to your Linux / macOS / WSL2 system.
-2. See the [section](#building-the-docker-image-manually) on building the image manually, if desired.
-3. Ensure you have the permissions to `get/list/describe` your cluster via the native APIs and you have Kubernetes `cluster-admin` or the `view` `ClusterRole` bound to your current account.
-4. Run the tool for your use case:
+1. Install Docker, if you have not done so already.
+2. Clone this repository to your Linux / macOS / WSL2 system.
+3. See the [section](#building-the-docker-image-manually) on building the image manually, if desired.
+4. Ensure you have the permissions to `get/list/describe` your cluster via the native APIs and you have Kubernetes `cluster-admin` or the `view` `ClusterRole` bound to your current account.
+5. Ensure that all commands after this step are run in the context of a user with access to run Docker containers (e.g. `root`). Do not use `sudo`, as this will not preserve the authentication-related environment variables.
+6. Run the tool for your use case:
 
 **AKS**
 
